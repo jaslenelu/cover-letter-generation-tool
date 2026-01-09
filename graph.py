@@ -20,13 +20,13 @@ class LoRState(TypedDict):
     hallucination_risk: Optional[str]  # low, medium, high
     unsupported_sentences: Optional[List[str]]
 
-def build_graph(api_key: str = None):
+def build_graph(api_key: str = None, language: str = "English"):
     """Build and return the LangGraph workflow for recommendation letter generation"""
     # Import here to avoid circular dependency
     from agents import create_agents_with_api_key
 
-    # Create agents with the provided API key
-    fact_extraction_agent, drafting_agent, verification_agent, decision = create_agents_with_api_key(api_key)
+    # Create agents with the provided API key and language
+    fact_extraction_agent, drafting_agent, verification_agent, decision = create_agents_with_api_key(api_key, language)
 
     graph = StateGraph(LoRState)
 
