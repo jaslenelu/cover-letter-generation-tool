@@ -114,7 +114,7 @@ def create_agents_with_api_key(api_key: str = None, language: str = "English"):
             - 以強烈的推薦作為結尾
             - 始終保持專業和真誠的語氣
 
-            請以適當的段落正確格式化信件。請用繁體中文撰寫整封推薦信。
+            請以適當的段落正確格式化信件。請用臺灣繁體中文撰寫整封推薦信。
             """
 
         state["draft_letter"] = llm.invoke(prompt).content
